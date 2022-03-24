@@ -47,7 +47,7 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        if (work) {
+        if (work == false) {
             typeMovieTextContent(event.getReplyToken(), event, message);
         } else {
             handleTextContent(event.getReplyToken(), event, message);
