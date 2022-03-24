@@ -194,7 +194,7 @@ public class LineBotController {
 
 
     private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-        // String text1 = content.getText();
+        String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
         if (this.ans == 1) {
