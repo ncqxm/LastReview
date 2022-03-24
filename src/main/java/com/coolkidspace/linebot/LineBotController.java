@@ -45,6 +45,7 @@ public class LineBotController {
     // -------------------------Attribute-------------------------------------
     public String text;
     public int ans;
+    private boolean work = true;
 
     // -----------------------End of Attribute------------------------
 
@@ -61,7 +62,11 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        handleTextContent(event.getReplyToken(), event, message);
+        if (work == false) {
+            typeMovieTextContent(event.getReplyToken(), event, message);
+        } else {
+            handleTextContent(event.getReplyToken(), event, message);
+        }
     }
 
     // ---------------------- End of Coding-------------------------------------
@@ -124,13 +129,14 @@ public class LineBotController {
     public String checkText(String text) {
         String usermessage;
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
-                || (text.equals("รัววิ")) || (text.equals("review")) || (text.equals("Review")) 
+                || (text.equals("รัววิ")) || (text.equals("review")) || (text.equals("Review"))
                 || (text.equals("rEVIEW")) || (text.equals("eview")) || (text.equals("revirw"))
-                || (text.equals("Reviw"))  ) {
+                || (text.equals("Reviw"))) {
             text = "รีวิว";
-        } 
-        else if ((text.equals("รีววหนัง")) || (text.equals("รัวิวหนัง")) ) {
+        } else if ((text.equals("รีววหนัง")) || (text.equals("รัวิวหนัง"))) {
             text = "รีวิวหนัง";
+        } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีวว:ซีรีส์"))) {
+            text = "รีวิวซีรีส์";
         }
         return text;
     }
