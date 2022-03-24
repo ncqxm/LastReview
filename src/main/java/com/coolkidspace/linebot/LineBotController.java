@@ -217,12 +217,12 @@ public class LineBotController {
         }
     }
 
-    private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-        String text1 = content.getText();
+    // private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
+    //     String text1 = content.getText();
 
-        log.info("Got text message from %s : %s", replyToken, text1);
+    //     log.info("Got text message from %s : %s", replyToken, text1);
 
-    }
+    // }
 
     private void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
