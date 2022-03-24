@@ -62,7 +62,6 @@ public class LineBotController {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
-
     }
 
     // ---------------------- End of Coding-------------------------------------
@@ -126,9 +125,9 @@ public class LineBotController {
         String usermessage;
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
                 || (text.equals("รัววิ"))) {
-            usermessage = "รีวิว";
+            text = "รีวิว";
         } else {
-            usermessage = text;
+            text = text;
         }
         return text;
     }
@@ -157,7 +156,7 @@ public class LineBotController {
                 break;
             }
             case "รีวิว": {
-                this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+                this.reply(replyToken, new TextMessage("https://www.youtube.com/watch?v=5eVu__pc6gI"));
                 break;
             }
             case "review": {
@@ -179,7 +178,7 @@ public class LineBotController {
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, new TextMessage("Review series gun ka"));
-                this.ans =2;
+                this.ans = 2;
                 break;
             }
             default:
@@ -192,23 +191,20 @@ public class LineBotController {
         }
     }
 
-
     private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
         if (this.ans == 1) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
-                                                new TextMessage("m1"), 
-                                                new TextMessage("m2")));
-        } else if (this.ans == 2){
+                    new TextMessage("m1"),
+                    new TextMessage("m2")));
+        } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
-            new TextMessage("s1"),
-            new TextMessage("s2")));
+                    new TextMessage("s1"),
+                    new TextMessage("s2")));
         }
     }
-
-
 
     // private void handleStickerContent(String replyToken, StickerMessageContent
     // content) {
