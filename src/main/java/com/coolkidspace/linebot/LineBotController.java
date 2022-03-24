@@ -1,38 +1,23 @@
 package com.coolkidspace.linebot;
 
-// import java.io.IOException;
-// import java.io.OutputStream;
-// import java.io.UncheckedIOException;
-// import java.nio.file.Files;
 import java.nio.file.Path;
-// import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-// import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
-// import com.google.common.io.ByteStreams;
 import com.linecorp.bot.client.LineMessagingClient;
-// import com.linecorp.bot.client.MessageContentResponse;
 import com.linecorp.bot.model.ReplyMessage;
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
-// import com.linecorp.bot.model.event.message.ImageMessageContent;
-// import com.linecorp.bot.model.event.message.LocationMessageContent;
-// import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
-// import com.linecorp.bot.model.message.ImageMessage;
-// import com.linecorp.bot.model.message.LocationMessage;
 import com.linecorp.bot.model.message.Message;
-// import com.linecorp.bot.model.message.StickerMessage;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.response.BotApiResponse;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import lombok.NonNull;
 import lombok.Value;
@@ -62,11 +47,11 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        // if (work == false) {
-        //     typeMovieTextContent(event.getReplyToken(), event, message);
-        // } else {
+        if (work == false) {
+            typeMovieTextContent(event.getReplyToken(), event, message);
+        } else {
             handleTextContent(event.getReplyToken(), event, message);
-        // }
+        }
     }
 
     // ---------------------- End of Coding-------------------------------------
@@ -78,53 +63,7 @@ public class LineBotController {
     // handleTextContent(event.getReplyToken(), event, message);
     // }
 
-    // @EventMapping
-    // public void handleStickerMessage(MessageEvent<StickerMessageContent> event) {
-    // log.info(event.toString());
-    // StickerMessageContent message = event.getMessage();
-    // reply(event.getReplyToken(), new StickerMessage(
-    // message.getPackageId(), message.getStickerId()));
-    // }
-
-    // @EventMapping
-    // public void handleLocationMessage(MessageEvent<LocationMessageContent> event)
-    // {
-    // log.info(event.toString());
-    // LocationMessageContent message = event.getMessage();
-    // reply(event.getReplyToken(), new LocationMessage(
-    // (message.getTitle() == null) ? "Location replied" : message.getTitle(),
-    // message.getAddress(),
-    // message.getLatitude(),
-    // message.getLongitude()));
-    // }
-
-    // @EventMapping
-    // public void handleImageMessage(MessageEvent<ImageMessageContent> event) {
-    // log.info(event.toString());
-    // ImageMessageContent content = event.getMessage();
-    // String replyToken = event.getReplyToken();
-
-    // try {
-    // MessageContentResponse response =
-    // lineMessagingClient.getMessageContent(content.getId()).get();
-    // DownloadedContent jpg = saveContent("jpg", response);
-    // DownloadedContent previewImage = createTempFile("jpg");
-
-    // system("convert", "-resize", "240x",
-    // jpg.path.toString(),
-    // previewImage.path.toString());
-
-    // reply(replyToken, new ImageMessage(jpg.getUri(), previewImage.getUri()));
-
-    // } catch (InterruptedException | ExecutionException e) {
-    // reply(replyToken, new TextMessage("Cannot get image: " + content));
-    // throw new RuntimeException(e);
-    // }
-
-    // }
-
-    // -------------------------เริ่มแก้ไข -->
-    // "Profile"----------------------------------------
+    // -------------------------เริ่มแก้ไข -->"Profile"----------------------------------------
     // checktext ที่ user input เข้ามา
     public String checkText(String text) {
         String usermessage;
@@ -165,19 +104,18 @@ public class LineBotController {
                 break;
             }
             case "รีวิว": {
-                // work = true;
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
                 break;
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, new TextMessage("https://intrend.trueid.net/bangkok/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7-the-adam-project-%E0%B8%A2%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%94%E0%B8%B1%E0%B8%A1-%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%8B%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%9B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%AE%E0%B8%B5%E0%B9%82%E0%B8%A3%E0%B9%88%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%B2%E0%B9%80%E0%B8%A7%E0%B8%A5-trueidintrend_265423"));
-                // work = false;         
+                work = false;         
                 this.ans = 1;
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, new TextMessage("Business Proposal ดีมากจ้าา"));
-                // work = false;
+                work = false;
                 this.ans = 2;
                 break;
             }
@@ -196,21 +134,15 @@ public class LineBotController {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
-            // work = false;
+            work = false;
 
         } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
                     new TextMessage("s1"),
                     new TextMessage("s2")));
-            // work = false;
+            work = false;
         }
     }
-
-    // private void handleStickerContent(String replyToken, StickerMessageContent
-    // content) {
-    // reply(replyToken, new StickerMessage(
-    // content.getPackageId(), content.getStickerId()));
-    // }
 
     private void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
@@ -236,48 +168,6 @@ public class LineBotController {
         }
     }
     // --------------จบของ Profile------------------------------------------
-
-    // private void system(String... args) {
-    // ProcessBuilder processBuilder = new ProcessBuilder(args);
-    // try {
-    // Process start = processBuilder.start();
-    // int i = start.waitFor();
-    // log.info("result: {} => {}", Arrays.toString(args), i);
-    // } catch (InterruptedException e) {
-    // log.info("Interrupted", e);
-    // Thread.currentThread().interrupt();
-    // } catch (IOException e) {
-    // throw new UncheckedIOException(e);
-    // }
-    // }
-
-    // private static DownloadedContent saveContent(String ext,
-    // MessageContentResponse response) {
-    // log.info("Content-type: {}", response);
-    // DownloadedContent tempFile = createTempFile(ext);
-    // try (OutputStream outputStream = Files.newOutputStream(tempFile.path)) {
-    // ByteStreams.copy(response.getStream(), outputStream);
-    // log.info("Save {}: {}", ext, tempFile);
-    // return tempFile;
-    // } catch (IOException e) {
-    // throw new UncheckedIOException(e);
-    // }
-    // }
-
-    // private static DownloadedContent createTempFile(String ext) {
-    // String fileName = LocalDateTime.now() + "-" + UUID.randomUUID().toString() +
-    // "." + ext;
-    // Path tempFile = Application.downloadedContentDir.resolve(fileName);
-    // tempFile.toFile().deleteOnExit();
-    // return new DownloadedContent(tempFile, createUri("/downloaded/" +
-    // tempFile.getFileName()));
-
-    // }
-
-    // private static String createUri(String path) {
-    // return ServletUriComponentsBuilder.fromCurrentContextPath()
-    // .path(path).toUriString();
-    // }
 
     @Value
     public static class DownloadedContent {
