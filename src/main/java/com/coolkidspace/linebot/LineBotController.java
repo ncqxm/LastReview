@@ -170,7 +170,7 @@ public class LineBotController {
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, new TextMessage("พิมพ์ให้ถูกด้วยจ้า"));
-                work = false;            
+                work = false;         
                 this.ans = 1;
                 break;
             }
@@ -195,10 +195,13 @@ public class LineBotController {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
+            work = false;
+            
         } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
                     new TextMessage("s1"),
                     new TextMessage("s2")));
+            work = false;
         }
     }
 
