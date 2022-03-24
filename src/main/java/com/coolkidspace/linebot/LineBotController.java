@@ -49,7 +49,7 @@ public class LineBotController {
         TextMessageContent message = event.getMessage();
         if (work == false) {
             typeMovieTextContent(event.getReplyToken(), event, message);
-        } else {
+        } else if (work == true) {
             handleTextContent(event.getReplyToken(), event, message);
         }
     }
@@ -63,7 +63,8 @@ public class LineBotController {
     // handleTextContent(event.getReplyToken(), event, message);
     // }
 
-    // -------------------------เริ่มแก้ไข -->"Profile"----------------------------------------
+    // -------------------------เริ่มแก้ไข
+    // -->"Profile"----------------------------------------
     // checktext ที่ user input เข้ามา
     public String checkText(String text) {
         String usermessage;
@@ -110,7 +111,7 @@ public class LineBotController {
             case "รีวิวหนัง": {
                 this.reply(replyToken, new TextMessage("https://zhort.link/GdH"));
                 this.ans = 1;
-                work = false;         
+                work = false;
                 break;
             }
             case "รีวิวซีรีส์": {
@@ -121,8 +122,10 @@ public class LineBotController {
             }
             case "ยกเลิก": {
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+                this.ans = 0;
                 work = true;
-                break;}
+                break;
+            }
             default:
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
@@ -138,7 +141,7 @@ public class LineBotController {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
-                
+
             // work = false;
         } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
