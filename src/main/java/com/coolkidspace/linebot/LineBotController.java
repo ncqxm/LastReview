@@ -120,11 +120,6 @@ public class LineBotController {
                 work = false;
                 break;
             }
-            case "ยกเลิก": {
-                this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
-                this.ans = 0;
-                break;
-            }
             default:
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
@@ -136,13 +131,13 @@ public class LineBotController {
         String text1 = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text1);
-        if (this.ans == 1) {
+        if (ans == 1) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
 
             // work = false;
-        } else if (this.ans == 2) {
+        } else if (ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
                     new TextMessage("s1"),
                     new TextMessage("s2")));
