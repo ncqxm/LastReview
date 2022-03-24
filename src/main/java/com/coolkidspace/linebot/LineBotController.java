@@ -193,17 +193,15 @@ public class LineBotController {
     }
 
 
-    // private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-    //     // String text1 = content.getText();
+    private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
+        // String text1 = content.getText();
 
-    //     log.info("Got text message from %s : %s", replyToken, text);
-    //     if (this.ans == 1) {
-    //         this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
-    //         new TextMessage(""));
-
-
-    //     }
-    // }
+        log.info("Got text message from %s : %s", replyToken, text);
+        if (this.ans == 1) {
+            this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
+            new TextMessage("m1")));
+        }
+    }
 
 
 
