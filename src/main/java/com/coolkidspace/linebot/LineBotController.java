@@ -47,7 +47,7 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        if (work == false) {
+        if (work) {
             typeMovieTextContent(event.getReplyToken(), event, message);
         } else {
             handleTextContent(event.getReplyToken(), event, message);
@@ -74,7 +74,7 @@ public class LineBotController {
             text = "รีวิว";
         } else if ((text.equals("รีววหนัง")) || (text.equals("รัวิวหนัง"))) {
             text = "รีวิวหนัง";
-        } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีวว:ซีรีส์"))) {
+        } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))) {
             text = "รีวิวซีรีส์";
         }
         return text;
