@@ -119,6 +119,10 @@ public class LineBotController {
                 work = false;
                 break;
             }
+            case "ยกเลิก": {
+                this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+                work = true;
+                break;}
             default:
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
@@ -134,6 +138,7 @@ public class LineBotController {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
+                
             // work = false;
         } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
