@@ -36,6 +36,7 @@ public class LineBotController {
 
     @Autowired
     private LineMessagingClient lineMessagingClient;
+
     // ---------------------- Start from here-----------------------------------
     // Constructor
     // public Project(String text1) {
@@ -47,12 +48,9 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        if (work == false) {
-            typeMovieTextContent(event.getReplyToken(), event, message);
-        } else if (work == true) {
             handleTextContent(event.getReplyToken(), event, message);
         }
-    }
+
 
     // ---------------------- End of Coding-------------------------------------
 
@@ -109,15 +107,11 @@ public class LineBotController {
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("https://zhort.link/GdH"));
-                this.ans = 1;
-                work = false;
+                this.reply(replyToken, new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ\nm1\nm2\nm3\nm4"));
                 break;
             }
             case "รีวิวซีรีส์": {
-                this.reply(replyToken, new TextMessage("Business Proposal ดีมากจ้าา"));
-                this.ans = 2;
-                work = false;
+                this.reply(replyToken, new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ\ns1\ns2\ns3\ns4"));
                 break;
             }
             default:
@@ -127,25 +121,25 @@ public class LineBotController {
         }
     }
 
-    private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-        String text1 = content.getText();
+    // private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
+    //     String text1 = content.getText();
 
-        log.info("Got text message from %s : %s", replyToken, text1);
-        if (ans == 1) {
-            this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
-                    new TextMessage("m1"),
-                    new TextMessage("m2")));
+    //     log.info("Got text message from %s : %s", replyToken, text1);
+    //     if (ans == 1) {
+    //         this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
+    //                 new TextMessage("m1"),
+    //                 new TextMessage("m2")));
 
-            // work = false;
-        } else if (ans == 2) {
-            this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
-                    new TextMessage("s1"),
-                    new TextMessage("s2")));
-            // work = false;
-        } else {
-            this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
-        }
-    }
+    //         // work = false;
+    //     } else if (ans == 2) {
+    //         this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
+    //                 new TextMessage("s1"),
+    //                 new TextMessage("s2")));
+    //         // work = false;
+    //     } else {
+    //         this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+    //     }
+    // }
 
     private void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
