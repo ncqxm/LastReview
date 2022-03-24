@@ -169,12 +169,14 @@ public class LineBotController {
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("พิมพ์ให้ถูกด้วยจ้าา"));
+                this.reply(replyToken, new TextMessage("พิมพ์ให้ถูกด้วยจ้า"));
+                work = false;            
                 this.ans = 1;
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, new TextMessage("Business Proposal ดีมากจ้าา"));
+                work = false;
                 this.ans = 2;
                 break;
             }
