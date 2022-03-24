@@ -157,7 +157,9 @@ public class LineBotController {
                         new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
             }
         } else if (work == false){
-            this.reply(replyToken, new TextMessage("คุณต้องการอะไรคะ"));
+            if (text.equals("ยกเลิก")){
+                this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+            }
         }
         return text;
     }
