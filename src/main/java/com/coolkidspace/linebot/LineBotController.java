@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LineBotController {
 
     // -------------------------Attribute-------------------------------------
-    public String text;
+    public String text1;
     public int ans;
     private boolean work = true;
 
@@ -127,20 +127,19 @@ public class LineBotController {
     }
 
     private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-        String text = content.getText();
+        String text1 = content.getText();
 
-        log.info("Got text message from %s : %s", replyToken, text);
+        log.info("Got text message from %s : %s", replyToken, text1);
         if (this.ans == 1) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
                     new TextMessage("m1"),
                     new TextMessage("m2")));
-            work = false;
-
+            // work = false;
         } else if (this.ans == 2) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
                     new TextMessage("s1"),
                     new TextMessage("s2")));
-            work = false;
+            // work = false;
         }
     }
 
