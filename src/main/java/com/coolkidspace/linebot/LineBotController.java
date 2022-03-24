@@ -73,7 +73,8 @@ public class LineBotController {
             text = "รีวิว";
         } else if ((text.equals("รีววหนัง")) || (text.equals("รัวิวหนัง"))) {
             text = "รีวิวหนัง";
-        } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))) {
+        } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))
+                || (text.equals("รีวิววีรีส์"))) {
             text = "รีวิวซีรีส์";
         } 
         return text;
@@ -108,12 +109,12 @@ public class LineBotController {
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"),
-                new TextMessage("m1\t\tThe Adam project \nm2\t\tThe misfits \nm3\t\tRed notice \nm4\t\tThe divine fury \nm5\t\tHunter killer \nm6\t\tThe old guard \nm7\t\tPee nak 3(พี่นาค3) \nm8\t\tJade dynasty \nm9\t\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
+                new TextMessage("m1\t\t\tThe Adam project \nm2\t\t\tThe misfits \nm3\t\t\tRed notice \nm4\t\t\tThe divine fury \nm5\t\t\tHunter killer \nm6\t\t\tThe old guard \nm7\t\t\tPee nak 3(พี่นาค3) \nm8\t\t\tJade dynasty \nm9\t\t\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ"),
-                                                    new TextMessage("s1\t\tBusiness Proposal \ns2\t\ttwenty five twenty one \ns3\t\tForecasting Love and Weather \ns4\t\tAll of Us Are Dead \ns5\t\tMy Roommate is a Gumiho \ns6\t\tJuvenile Justice \ns7\t\tThe Silent Sea ทะเลสงัด \ns8\t\tThe Cursed \ns9\t\tCracow Monsters \ns10\tEmily in Paris season 2")));
+                new TextMessage("s1\t\t\tBusiness Proposal \ns2\t\t\ttwenty five twenty one \ns3\t\t\tForecasting Love and Weather \ns4\t\t\tAll of Us Are Dead \ns5\t\t\tMy Roommate is a Gumiho \ns6\t\t\tJuvenile Justice \ns7\t\t\tThe Silent Sea ทะเลสงัด \ns8\t\t\tThe Cursed \ns9\t\t\tCracow Monsters \ns10\tEmily in Paris season 2")));
                 break;
             }
             default:
