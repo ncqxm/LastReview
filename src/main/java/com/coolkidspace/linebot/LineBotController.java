@@ -199,7 +199,11 @@ public class LineBotController {
         log.info("Got text message from %s : %s", replyToken, text);
         if (this.ans == 1) {
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
-            new TextMessage("m1")));
+                                                new TextMessage("m1"), 
+                                                new TextMessage("m2")));
+        } else if (this.ans == 2){
+            this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
+            new TextMessage("s1")));
         }
     }
 
