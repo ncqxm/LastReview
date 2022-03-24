@@ -108,15 +108,15 @@ public class LineBotController {
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("https://intrend.trueid.net/bangkok/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7-the-adam-project-%E0%B8%A2%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%94%E0%B8%B1%E0%B8%A1-%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%8B%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%9B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%AE%E0%B8%B5%E0%B9%82%E0%B8%A3%E0%B9%88%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%B2%E0%B9%80%E0%B8%A7%E0%B8%A5-trueidintrend_265423"));
-                work = false;         
+                this.reply(replyToken, new TextMessage("https://zhort.link/GdH"));
                 this.ans = 1;
+                work = false;         
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, new TextMessage("Business Proposal ดีมากจ้าา"));
-                work = false;
                 this.ans = 2;
+                work = false;
                 break;
             }
             default:
