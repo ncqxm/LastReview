@@ -203,7 +203,8 @@ public class LineBotController {
                                                 new TextMessage("m2")));
         } else if (this.ans == 2){
             this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
-            new TextMessage("s1")));
+            new TextMessage("s1"),
+            new TextMessage("s2")));
         }
     }
 
