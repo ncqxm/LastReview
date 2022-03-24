@@ -78,6 +78,8 @@ public class LineBotController {
         } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))
                 || (text.equals("รีวิววีรีส์"))) {
             text = "รีวิวซีรีส์";
+        } else if (text.equals("ยกเลิก")){
+            work = false;
         }
         return text;
     }
