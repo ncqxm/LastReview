@@ -80,6 +80,17 @@ public class LineBotController {
         return text;
     }
 
+    public String getTypeMovie(String replyToken, Event event, TextMessageContent content){
+        String text = content.getText();
+        log.info("Got text message from %s : %s", replyToken, text);
+        if (text.equals("m1")){
+            this.reply(replyToken, Arrays.asList(new TextMessage("เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                                                new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                                                new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+        }
+        return text;
+    }
+
     private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
 
@@ -124,25 +135,12 @@ public class LineBotController {
         }
     }
 
-    // private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
-    //     String text1 = content.getText();
+    private void typeMovieTextContent(String replyToken, Event event, TextMessageContent content) {
+        String text1 = content.getText();
 
-    //     log.info("Got text message from %s : %s", replyToken, text1);
-    //     if (ans == 1) {
-    //         this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิว"),
-    //                 new TextMessage("m1"),
-    //                 new TextMessage("m2")));
-
-    //         // work = false;
-    //     } else if (ans == 2) {
-    //         this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิว"),
-    //                 new TextMessage("s1"),
-    //                 new TextMessage("s2")));
-    //         // work = false;
-    //     } else {
-    //         this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
-    //     }
-    // }
+        log.info("Got text message from %s : %s", replyToken, text1);
+ 
+    }
 
     private void replyText(@NonNull String replyToken, @NonNull String message) {
         if (replyToken.isEmpty()) {
