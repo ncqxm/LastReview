@@ -124,12 +124,14 @@ public class LineBotController {
     public String checkText(String text) {
         String usermessage;
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
-                || (text.equals("รัววิ"))) {
+                || (text.equals("รัววิ")) || (text.equals("review")) || (text.equals("Review")) 
+                || (text.equals("rEVIEW")) || (text.equals("eview")) || (text.equals("revirw"))
+                || (text.equals("Reviw"))  ) {
             text = "รีวิว";
         } 
-        // else {
-        //     text = text;
-        // }
+        else if ((text.equals("รีววหนัง")) || (text.equals("รัวิวหนัง")) ) {
+            text = "รีวิวหนัง";
+        }
         return text;
     }
 
@@ -157,40 +159,23 @@ public class LineBotController {
                 break;
             }
             case "รีวิว": {
-                this.reply(replyToken, new TextMessage("https://www.youtube.com/watch?v=5eVu__pc6gI"));
-                break;
-            }
-            case "review": {
-                this.reply(replyToken, new TextMessage("movie or series"));
-                break;
-            }
-            case "ดูหนังบ่": {
-                this.reply(replyToken, new TextMessage("อยากดูหนังแนวไหนอ่ะ"));
-                break;
-            }
-            case "New movie": {
-                this.reply(replyToken, new TextMessage("Let's see new movie"));
-                break;
-            }
-            case "Old movie": {
-                this.reply(replyToken, new TextMessage("Let's see old movie"));
+                this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("Review movie gun ka"));
+                this.reply(replyToken, new TextMessage("พิมพ์ให้ถูกด้วยจ้าา"));
                 this.ans = 1;
                 break;
             }
             case "รีวิวซีรีส์": {
-                this.reply(replyToken, new TextMessage("Review series gun ka"));
+                this.reply(replyToken, new TextMessage("Business Proposal ดีมากจ้าา"));
                 this.ans = 2;
                 break;
             }
             default:
                 this.reply(replyToken, Arrays.asList(
-                        new TextMessage("POPCORN is confused."),
-                        new TextMessage("ไหนลองใหม่สิ"),
-                        new TextMessage("Good afternoon")));
+                        new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
+                        new TextMessage("ไหนลองพิมพืมพ์ใหม่สิ")));
         }
     }
 
