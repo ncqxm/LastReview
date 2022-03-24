@@ -174,12 +174,12 @@ public class LineBotController {
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, new TextMessage("Review movie gun ka"));
-                // this.ans = 1;
+                this.ans = 1;
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, new TextMessage("Review series gun ka"));
-                // this.ans =2;
+                this.ans =2;
                 break;
             }
             default:
