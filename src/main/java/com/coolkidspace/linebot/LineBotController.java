@@ -107,12 +107,13 @@ public class LineBotController {
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"));
+                this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"),
+                new TextMessage("m1\tThe Adam project \nm2\tThe misfits \nm3\tRed notice \nm4\tThe divine fury \nm5\tHunter killer \nm6\tThe old guard \nm7\tPee nak 3(พี่นาค3) \nm8\tJade dynasty \nm9\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ"),
-                                                    new TextMessage("m1\tThe Adam project \n m2\tThe misfits \n m3\tRed notice")));
+                                                    new TextMessage("s1\tBusiness Proposal \ns2\ttwenty five twenty one \ns3\tForecasting Love and Weather \ns4\tAll of Us Are Dead \ns5\tMy Roommate is a Gumiho \ns6\tJuvenile Justice \ns7\tThe Silent Sea ทะเลสงัด \ns8\tThe Cursed \ns9\tCracow Monsters \ns10\tEmily in Paris season 2")));
                 break;
             }
             default:
