@@ -138,7 +138,7 @@ public class LineBotController {
 
         log.info("Got text message from %s : %s", replyToken, text);
 
-        switch (text) {
+        switch (checkText(text)) {
             case "Profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
@@ -168,7 +168,7 @@ public class LineBotController {
                 this.reply(replyToken, new TextMessage("อยากดูหนังแนวไหนอ่ะ"));
                 break;
             }
-            case "Old movie": {
+            case "New movie": {
                 this.reply(replyToken, new TextMessage("Let's see new movie"));
                 break;
             }
