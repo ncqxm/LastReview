@@ -168,7 +168,7 @@ public class LineBotController {
                 this.reply(replyToken, new TextMessage("อยากดูหนังแนวไหนอ่ะ"));
                 break;
             }
-            case "New movie": {
+            case "Old movie": {
                 this.reply(replyToken, new TextMessage("Let's see new movie"));
                 break;
             }
