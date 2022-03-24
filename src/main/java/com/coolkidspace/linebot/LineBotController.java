@@ -48,12 +48,11 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        if (work == true){
+        if (work) {
             getTypeMovie(event.getReplyToken(), event, message);
-        }else
+        } else
             handleTextContent(event.getReplyToken(), event, message);
-        }
-
+    }
 
     // ---------------------- End of Coding-------------------------------------
 
@@ -79,22 +78,68 @@ public class LineBotController {
         } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))
                 || (text.equals("รีวิววีรีส์"))) {
             text = "รีวิวซีรีส์";
-        } 
+        }
         return text;
     }
 
-    public String getTypeMovie(String replyToken, Event event, TextMessageContent content){
+    public String getTypeMovie(String replyToken, Event event, TextMessageContent content) {
 
         String text = content.getText();
         log.info("Got text message from %s : %s", replyToken, text);
 
-        // if (work == true){
-            if (text.equals("m1")){
-                this.reply(replyToken, Arrays.asList(new TextMessage("เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
-                                                    new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
-                                                    new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+        if (work == true) {
+            if (text.equals("m1")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m2")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m3")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m4")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m5")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m6")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m7")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m8")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m9")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            } else if (text.equals("m10")) {
+                this.reply(replyToken, Arrays.asList(new TextMessage(
+                        "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                        new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                        new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
             }
-        // }
+        }
         return text;
     }
 
@@ -127,13 +172,15 @@ public class LineBotController {
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"),
-                new TextMessage("m1\tThe Adam project \nm2\tThe misfits \nm3\tRed notice \nm4\tThe divine fury \nm5\tHunter killer \nm6\tThe old guard \nm7\tPee nak 3(พี่นาค3) \nm8\tJade dynasty \nm9\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
+                        new TextMessage(
+                                "m1\tThe Adam project \nm2\tThe misfits \nm3\tRed notice \nm4\tThe divine fury \nm5\tHunter killer \nm6\tThe old guard \nm7\tPee nak 3(พี่นาค3) \nm8\tJade dynasty \nm9\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
                 work = true;
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ"),
-                new TextMessage("s1\tBusiness Proposal \ns2\ttwenty five twenty one \ns3\tForecasting Love and Weather \ns4\tAll of Us Are Dead \ns5\tMy Roommate is a Gumiho \ns6\tJuvenile Justice \ns7\tThe Silent Sea ทะเลสงัด \ns8\tThe Cursed \ns9\tCracow Monsters \ns10\tEmily in Paris season 2")));
+                        new TextMessage(
+                                "s1\tBusiness Proposal \ns2\ttwenty five twenty one \ns3\tForecasting Love and Weather \ns4\tAll of Us Are Dead \ns5\tMy Roommate is a Gumiho \ns6\tJuvenile Justice \ns7\tThe Silent Sea ทะเลสงัด \ns8\tThe Cursed \ns9\tCracow Monsters \ns10\tEmily in Paris season 2")));
                 break;
             }
             default:
@@ -147,7 +194,7 @@ public class LineBotController {
         String text1 = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text1);
- 
+
     }
 
     private void replyText(@NonNull String replyToken, @NonNull String message) {
