@@ -126,9 +126,10 @@ public class LineBotController {
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
                 || (text.equals("รัววิ"))) {
             text = "รีวิว";
-        } else {
-            text = text;
-        }
+        } 
+        // else {
+        //     text = text;
+        // }
         return text;
     }
 
@@ -171,6 +172,10 @@ public class LineBotController {
                 this.reply(replyToken, new TextMessage("Let's see new movie"));
                 break;
             }
+            case "Old movie": {
+                this.reply(replyToken, new TextMessage("Let's see old movie"));
+                break;
+            }
             case "รีวิวหนัง": {
                 this.reply(replyToken, new TextMessage("Review movie gun ka"));
                 this.ans = 1;
@@ -184,10 +189,8 @@ public class LineBotController {
             default:
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN is confused."),
-                        new TextMessage(
-                                "ไหนลองใหม่สิ"),
+                        new TextMessage("ไหนลองใหม่สิ"),
                         new TextMessage("Good afternoon")));
-
         }
     }
 
