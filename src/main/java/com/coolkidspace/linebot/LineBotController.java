@@ -75,7 +75,7 @@ public class LineBotController {
             text = "รีวิวหนัง";
         } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))) {
             text = "รีวิวซีรีส์";
-        }
+        } 
         return text;
     }
 
@@ -107,11 +107,12 @@ public class LineBotController {
                 break;
             }
             case "รีวิวหนัง": {
-                this.reply(replyToken, new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ\nm1\nm2\nm3\nm4"));
+                this.reply(replyToken, new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"));
                 break;
             }
             case "รีวิวซีรีส์": {
-                this.reply(replyToken, new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ\ns1\ns2\ns3\ns4"));
+                this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ"),
+                                                    new TextMessage("m1\tThe Adam project \n m2\tThe misfits \n m3\tRed notice")));
                 break;
             }
             default:
