@@ -123,7 +123,6 @@ public class LineBotController {
             case "ยกเลิก": {
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
                 this.ans = 0;
-                work = true;
                 break;
             }
             default:
@@ -148,6 +147,8 @@ public class LineBotController {
                     new TextMessage("s1"),
                     new TextMessage("s2")));
             // work = false;
+        } else {
+            this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
         }
     }
 
