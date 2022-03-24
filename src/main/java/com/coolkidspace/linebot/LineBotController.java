@@ -30,7 +30,7 @@ public class LineBotController {
     // -------------------------Attribute-------------------------------------
     public String text1;
     public int ans;
-    private boolean work = true;
+    private boolean work = false;
 
     // -----------------------End of Attribute------------------------
 
@@ -48,6 +48,9 @@ public class LineBotController {
     public void handleTextMessage(MessageEvent<TextMessageContent> event) {
         log.info(event.toString());
         TextMessageContent message = event.getMessage();
+        if (work == true){
+            getTypeMovie(event.getReplyToken(), event, message);
+        }else
             handleTextContent(event.getReplyToken(), event, message);
         }
 
@@ -81,12 +84,16 @@ public class LineBotController {
     }
 
     public String getTypeMovie(String replyToken, Event event, TextMessageContent content){
+
         String text = content.getText();
         log.info("Got text message from %s : %s", replyToken, text);
-        if (text.equals("m1")){
-            this.reply(replyToken, Arrays.asList(new TextMessage("เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
-                                                new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
-                                                new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+
+        if (work == true){
+            if (text.equals("m1")){
+                this.reply(replyToken, Arrays.asList(new TextMessage("เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
+                                                    new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
+                                                    new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
+            }
         }
         return text;
     }
@@ -120,12 +127,13 @@ public class LineBotController {
             }
             case "รีวิวหนัง": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสหนังที่อยากอ่านรีวิวได้เลยค่ะ"),
-                new TextMessage("m1\t\t\tThe Adam project \nm2\t\t\tThe misfits \nm3\t\t\tRed notice \nm4\t\t\tThe divine fury \nm5\t\t\tHunter killer \nm6\t\t\tThe old guard \nm7\t\t\tPee nak 3(พี่นาค3) \nm8\t\t\tJade dynasty \nm9\t\t\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
+                new TextMessage("m1\t\tThe Adam project \nm2\t\tThe misfits \nm3\t\tRed notice \nm4\t\tThe divine fury \nm5\t\tHunter killer \nm6\t\tThe old guard \nm7\t\tPee nak 3(พี่นาค3) \nm8\t\tJade dynasty \nm9\t\tBlack crab \nm10\tGet him girl(ส้มป่อย)")));
+                work = true;
                 break;
             }
             case "รีวิวซีรีส์": {
                 this.reply(replyToken, Arrays.asList(new TextMessage("พิมพ์รหัสซีรีส์ที่อยากอ่านรีวิวได้เลยค่ะ"),
-                new TextMessage("s1\t\t\tBusiness Proposal \ns2\t\t\ttwenty five twenty one \ns3\t\t\tForecasting Love and Weather \ns4\t\t\tAll of Us Are Dead \ns5\t\t\tMy Roommate is a Gumiho \ns6\t\t\tJuvenile Justice \ns7\t\t\tThe Silent Sea ทะเลสงัด \ns8\t\t\tThe Cursed \ns9\t\t\tCracow Monsters \ns10\tEmily in Paris season 2")));
+                new TextMessage("s1\t\tBusiness Proposal \ns2\t\ttwenty five twenty one \ns3\tForecasting Love and Weather \ns4\t\tAll of Us Are Dead \ns5\t\tMy Roommate is a Gumiho \ns6\t\tJuvenile Justice \ns7\t\tThe Silent Sea ทะเลสงัด \ns8\t\tThe Cursed \ns9\t\tCracow Monsters \ns10\tEmily in Paris season 2")));
                 break;
             }
             default:
