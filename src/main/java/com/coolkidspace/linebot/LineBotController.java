@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @LineMessageHandler
-public class LineBotController {
+public class LineBotController implements checkInput{
 
     // -------------------------Attribute-------------------------------------
     public String text;
@@ -35,6 +35,7 @@ public class LineBotController {
 
     @Autowired
     private LineMessagingClient lineMessagingClient;
+    private String text2;
 
     // ---------------------- Start coding from
     // here-----------------------------------
