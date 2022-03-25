@@ -196,7 +196,7 @@ public class LineBotController {
             }
             case "ยกเลิก": {
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
-                work = true;
+                // work = true;
                 break;
             }
             case "รีวิวหนัง": {
