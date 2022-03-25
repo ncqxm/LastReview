@@ -77,10 +77,10 @@ public class LineBotController {
             text = "รีวิวหนัง";
         } else if ((text.equals("รีววซีรีส์")) || (text.equals("รีววซีรีส์")) || (text.equals("รีวิววีรีส์"))
                 || (text.equals("รีวิววีรีส์"))) {
-            text = "รีวิวซีรีส์";}
-        // } else if (text.equals("ยกเลิก")){
-        //     work = false;
-        // }
+            text = "รีวิวซีรีส์";
+        } else if (text.equals("ยกเลิก")){
+            work = false;
+        }
         return text;
     }
 
@@ -155,12 +155,15 @@ public class LineBotController {
                         "เรื่องราวของ อดัม รี้ด (ไรอัน เรย์โนลด์ส) นักบินหนุ่มที่ได้เดินทางข้ามเวลา หลังจากประสบอุบัติเหตุยานตกในปี 2022 ก็ได้ย้อนเวลากลับไปและแอบเข้าไปในบ้านลึกลับแห่งหนึ่งจึงพบเข้ากับเด็กวัย 13 ปี และต่อมาก็ได้รับการเปิดเผยว่าเป็นร่างในวัยเด็กของตัวเขาเอง เขาทั้งสองจึงต้องร่วมมือกันตามหาพ่อ ( มาร์ค รัฟฟาโล ) พร้อมกับทำภารกิจกอบกู้อนาคต"),
                         new TextMessage("รีวิวแบบเต็มค่ะ\t\t\t : •	https://zhort.link/GdH"),
                         new TextMessage("Trailor : •	https://www.youtube.com/watch?v=nQm0wor_qoQ")));
-            }
-        } else if (work == false){
-            if (text.equals("ยกเลิก")){
+            } else if (text.equals("ยกเลิก")){
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
             }
         }
+        // } else if (work == false){
+        //     if (text.equals("ยกเลิก")){
+        //         this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
+        //     }
+        // }
         return text;
     }
 
