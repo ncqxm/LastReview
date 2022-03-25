@@ -28,8 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LineBotController {
 
     // -------------------------Attribute-------------------------------------
-    public String text1;
-    public int ans;
+    public String text;
     private boolean work = false;
 
     // -----------------------End of Attribute------------------------
