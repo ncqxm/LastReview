@@ -35,10 +35,8 @@ public class LineBotController implements checkInput{
 
     @Autowired
     private LineMessagingClient lineMessagingClient;
-    private String text2;
 
-    // ---------------------- Start coding from
-    // here-----------------------------------
+    // ---------------------- Start coding from here-----------------------------------
 
     // Method
     @EventMapping // receive message from user
