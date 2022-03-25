@@ -283,5 +283,4 @@ public class LineBotController extends checkInput{
         Path path;
         String uri;
     }
-
 }
