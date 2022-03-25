@@ -158,6 +158,10 @@ public class LineBotController {
             } else if (text.equals("ยกเลิก")){
                 this.reply(replyToken, new TextMessage("รีวิวหนัง หรือ รีวิวซีรีส์"));
                 work = false;
+            } else {
+                this.reply(replyToken, Arrays.asList(
+                        new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
+                        new TextMessage("ไหนลองพิมพืมพ์ใหม่สิ")));
             }
         }
         // } else if (work == false){
