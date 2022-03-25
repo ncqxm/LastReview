@@ -1,31 +1,13 @@
 package com.coolkidspace.linebot;
 
-public class checkInput{
+public class checkInput {
 
     public String text;
-    public boolean work =false;
+    public boolean work = false;
 
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public boolean isWork() {
-        return work;
-    }
-
-    public void setWork(boolean work) {
-        this.work = work;
-    }
-
-    public String checkText(){
-        return text;
-    }
-   public String checkText(String text) {
+ 
+    // checktext ที่ user input เข้ามา
+    public String checkText(String text) {
 
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
                 || (text.equals("รัววิ")) || (text.equals("review")) || (text.equals("Review"))
@@ -61,4 +43,3 @@ public class checkInput{
         return text;
     }
 }
-    
