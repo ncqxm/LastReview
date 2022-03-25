@@ -77,6 +77,7 @@ public class LineBotController {
                 || (text.equals("ยกเลิด")) || (text.equals("ยกเลิเ")) || (text.equals("ยกเลิห"))
                 || (text.equals("ยกเลิพ")) || (text.equals("ยกเลิป"))
                 || (text.equals("Cancel")) || (text.equals("CANCEL")) || (text.equals("cancel"))) {
+            text = "ยกเลิก";
             work = false;
         }
         return text;
