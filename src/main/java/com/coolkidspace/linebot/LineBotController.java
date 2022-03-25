@@ -52,8 +52,6 @@ public class LineBotController implements checkInput{
     // checktext ที่ user input เข้ามา
     public String checkText(String text) {
 
-        String usermessage;
-
         if ((text.equals("รีวว")) || (text.equals("รัวิว")) || (text.equals("รีววิ"))
                 || (text.equals("รัววิ")) || (text.equals("review")) || (text.equals("Review"))
                 || (text.equals("rEVIEW")) || (text.equals("eview")) || (text.equals("revirw"))
@@ -321,4 +319,25 @@ public class LineBotController implements checkInput{
         Path path;
         String uri;
     }
+
+    @Override
+    public void getTypeMovie() {
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public boolean isWork() {
+        return work;
+    }
+
+    public void setWork(boolean work) {
+        this.work = work;
+    }
+
 }
