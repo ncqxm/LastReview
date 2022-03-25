@@ -161,7 +161,7 @@ public class LineBotController {
             } else {
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
-                        new TextMessage("ไหนลองพิมพืมพ์ใหม่สิ")));
+                        new TextMessage("ไหนลองพิมพ์ใหม่สิ")));
             }
         }
         // } else if (work == false){
@@ -221,7 +221,7 @@ public class LineBotController {
             default:
                 this.reply(replyToken, Arrays.asList(
                         new TextMessage("POPCORN ไม่เข้าใจค่ะ"),
-                        new TextMessage("ไหนลองพิมพืมพ์ใหม่สิ")));
+                        new TextMessage("ไหนลองพิมพ์ใหม่สิ")));
         }
     }
 
